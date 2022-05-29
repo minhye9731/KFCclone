@@ -7,7 +7,7 @@
 
 import UIKit
 
-class OrderViewController: UIViewController {
+class OrderViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var addressResultLabel: UILabel!
     @IBOutlet weak var phoneNumberTextField: UITextField!
@@ -18,6 +18,9 @@ class OrderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.phoneNumberTextField.delegate = self
+        self.requestTextField.delegate = self
+        
         addressResultLabel.text = result
         phoneNumberTextField.placeholder = "전화번호 입력"
         phoneNumberTextField.keyboardType = UIKeyboardType.numberPad
@@ -26,14 +29,21 @@ class OrderViewController: UIViewController {
         requestTextField.returnKeyType = .done
     }
     
+    // 텍스트란 두개 모두 입력중간에 공백란 클릭시 키보드 내려감 // 안되네;;
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        phoneNumberTextField.resignFirstResponder()
+//        requestTextField.resignFirstResponder()
+//    }
     
+    
+    // 두개 텍스트필드 입력완려부 여부에 따른 키보드 설정
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // 두개의 텍스트필드를 모두 종료 (키보드 내려가기)
         if phoneNumberTextField.text != "", requestTextField.text != "" {
             requestTextField.resignFirstResponder()
             return true
 
-             // 두번째 텍스트필드로 넘어가도록
+             // 두번째 텍스트필드로 넘어가도록 // 이거안되네;;;
         } else if phoneNumberTextField.text != "" {
             requestTextField.becomeFirstResponder()
             return true
@@ -41,7 +51,6 @@ class OrderViewController: UIViewController {
         return false
     }
     
-
     
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
     }
