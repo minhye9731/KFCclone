@@ -1201,7 +1201,6 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCa-jt-ljB">
                                 <rect key="frame" x="0.0" y="802" width="414" height="60"/>
-                                <color key="backgroundColor" red="0.85098040100000005" green="0.14509806040000001" blue="0.14509806040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="8q3-PZ-yil"/>
                                 </constraints>
@@ -1210,7 +1209,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="orderTapAction:" destination="RiE-hE-1nB" eventType="touchUpInside" id="yDq-S2-6ql"/>
+                                    <action selector="orderButtonTapped:" destination="RiE-hE-1nB" eventType="touchUpInside" id="lO8-8s-IaS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1240,6 +1239,7 @@
                     <navigationItem key="navigationItem" id="stk-4I-e2d"/>
                     <connections>
                         <outlet property="addressTextField" destination="tTd-Ui-h1g" id="1Lu-Bh-Hkp"/>
+                        <outlet property="orderButton" destination="eCa-jt-ljB" id="CLb-dE-lXW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C3g-9y-8uB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1728,7 +1728,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="i00-CA-etd"/>
-        <segue reference="4Ex-eP-qs6"/>
+        <segue reference="gI4-TA-vSL"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="KFC" width="216" height="100"/>
