@@ -33,6 +33,7 @@ class ViewController: UIViewController {
     
     // MARK: - 앱 접근권한 팝업
     func showPopup() {
+        print(#function)
         let appAccesStoryBoard = storyboard?.instantiateViewController(identifier: "AppAccessPopupViewController") as! AppAccessPopupViewController
         
         self.addChild(appAccesStoryBoard)
@@ -55,6 +56,7 @@ class ViewController: UIViewController {
     // MARK: - 자동스크롤 배너 메서드
     // 4초마다 실행되는 타이머
     func bannerTimer() {
+        print(#function)
         let _: Timer = Timer.scheduledTimer(withTimeInterval: 4, repeats: true) { (Timer) in
             self.bannerMove()
         }
@@ -86,6 +88,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     //컬렉션뷰 셀 설정
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        print(#function)
         let cell = bannerCollectionView.dequeueReusableCell(withReuseIdentifier: "BannerCell", for: indexPath) as! BannerCell
         cell.imgView.image = dataArray[indexPath.row]
         return cell
