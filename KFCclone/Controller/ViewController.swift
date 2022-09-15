@@ -53,7 +53,7 @@ class ViewController: UIViewController {
     }
     
     // MARK: - 자동스크롤 배너 메서드
-    // 2초마다 실행되는 타이머
+    // 4초마다 실행되는 타이머
     func bannerTimer() {
         let _: Timer = Timer.scheduledTimer(withTimeInterval: 4, repeats: true) { (Timer) in
             self.bannerMove()

@@ -11,6 +11,7 @@ class MenuViewController: UIViewController {
 
     @IBOutlet weak var menu1: UIView!
     
+ //   var menu
     
     override func viewDidLoad() {
         super.viewDidLoad()
